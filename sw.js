@@ -1,7 +1,7 @@
 importScripts('https://push-static.dbankcdn.com/hms-messaging.js');
 
-const apiKey = localStorage['HMS_API_KEY']
-const appId = localStorage['HMS_APP_ID']
+const apiKey = '732071094273459264';
+const appId = '732071094273459264';
 
 console.log(`appId = ${appId}`);
 console.log(`apiKey = ${apiKey}`);
