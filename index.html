@@ -14,17 +14,24 @@ navigator.serviceWorker.register("sw.js", {
 }).then((registration) => {
     messaging.useServiceWorker(registration);
 
-    messaging.getToken().then((currentToken) => {
-        if (currentToken) {
-            // Obtain a token.
-            console.log('Current token: ', currentToken);
-        } else {
-            console.log('No Instance ID token available. Request permission to generate one.');
-        }
-    }).catch((err) => {
-        console.log('An error occurred while retrieving token. ', err);
-    });   
-
+    if (Notification.permission !== "granted") {
+        Notification.requestPermission().then(function (permission) {
+          if (permission === "granted") {
+                messaging.getToken().then((currentToken) => {
+                    if (currentToken) {
+                        // Obtain a token.
+                        console.log('Current token: ', currentToken);
+                    } else {
+                        console.log('No Instance ID token available. Request permission to generate one.');
+                    }
+                }).catch((err) => {
+                    console.log('An error occurred while retrieving token. ', err);
+                });   
+           } else {
+               alert("No permission");
+           }
+        });
+    }
 })
 
 </script>
