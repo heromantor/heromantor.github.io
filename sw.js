@@ -10,7 +10,7 @@ console.log(`apiKey = ${apiKey}`);
 var hmsConfig = {
     apiKey: apiKey,
     appId: appId,
-    countryCode: "ru"
+    //countryCode: "ru"
 };
 
 // Initialize the WebPush SDK.
