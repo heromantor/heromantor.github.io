@@ -3,6 +3,7 @@ importScripts('/app.js');
 
 messaging = hmsMessaging();
 
+/*
 messaging.getToken().then((currentToken) => {
     if (currentToken) {
         // Obtain a token.
@@ -13,6 +14,7 @@ messaging.getToken().then((currentToken) => {
 }).catch((err) => {
     console.log('An error occurred while retrieving token. ', err);
 });   
+*/
 
 messaging.setBackgroundMessageHandler(function (payload) {
     console.log('[hms-messaging-sw.js] Received background message.', payload);
