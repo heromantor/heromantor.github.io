@@ -33,6 +33,7 @@ messaging.getToken().then((currentToken) => {
     console.log('An error occurred while retrieving token. ', err);
 });
     
+    /*
     navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function (reg) {
         if (reg.installing) {
             console.log('Service worker installing');
@@ -46,5 +47,6 @@ messaging.getToken().then((currentToken) => {
         // registration failed
         console.log('Registration failed with ' + error);
     });
+    */
 </script>
 </body>
