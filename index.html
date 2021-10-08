@@ -2,8 +2,37 @@
 <html lang="ru">
 <head>
     <title>HMS</title>
+    <script src="https://push-static.dbankcdn.com/hms-messaging.js"></script>
 <body>
 <script>
+const apiKey = '732071094273459264';
+const appId = '732071094273459264';
+
+console.log(`appId = ${appId}`);
+console.log(`apiKey = ${apiKey}`);
+
+// Configure web app information.
+var hmsConfig = {
+    apiKey: apiKey,
+    appId: appId,
+    //countryCode: "ru"
+};
+
+// Initialize the WebPush SDK.
+hms.initializeApp(hmsConfig);
+const messaging = hms.messaging();
+
+messaging.getToken().then((currentToken) => {
+    if (currentToken) {
+        // Obtain a token.
+        console.log('Current token: ', currentToken);
+    } else {
+        console.log('No Instance ID token available. Request permission to generate one.');
+    }
+}).catch((err) => {
+    console.log('An error occurred while retrieving token. ', err);
+});
+    
     navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function (reg) {
         if (reg.installing) {
             console.log('Service worker installing');
