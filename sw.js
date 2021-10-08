@@ -1,21 +1,7 @@
 importScripts('https://push-static.dbankcdn.com/hms-messaging.js');
+importScripts('/app.js');
 
-const apiKey = '732071094273459264';
-const appId = '732071094273459264';
-
-console.log(`appId = ${appId}`);
-console.log(`apiKey = ${apiKey}`);
-
-// Configure web app information.
-var hmsConfig = {
-    apiKey: apiKey,
-    appId: appId,
-    //countryCode: "ru"
-};
-
-// Initialize the WebPush SDK.
-hms.initializeApp(hmsConfig);
-const messaging = hms.messaging();
+messaging = hmsMessaging();
 
 messaging.setBackgroundMessageHandler(function (payload) {
     console.log('[hms-messaging-sw.js] Received background message.', payload);

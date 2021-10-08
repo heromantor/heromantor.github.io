@@ -3,26 +3,10 @@
 <head>
     <title>HMS</title>
     <script src="https://push-static.dbankcdn.com/hms-messaging.js"></script>
+    <script src="/app.js"></script>
 <body>
 <script>
-const apiKey = '732071094273459264';
-const appId = '732071094273459264';
-const projectId = '737518067793605225';
-
-console.log(`appId = ${appId}`);
-console.log(`apiKey = ${apiKey}`);
-
-// Configure web app information.
-var hmsConfig = {
-    apiKey: apiKey,
-    appId: appId,
-    projectId: projectId,
-    countryCode: "ru"
-};
-
-// Initialize the WebPush SDK.
-hms.initializeApp(hmsConfig);
-const messaging = hms.messaging();
+const messaging = hmsMessaging()
 
 messaging.getToken().then((currentToken) => {
     if (currentToken) {
