@@ -12,7 +12,6 @@ function hmsMessaging() {
     hms.initializeApp(hmsConfig);
     
     const messaging = hms.messaging();
-    messaging.usePublicVapidKey("BO56cwzeyARySlFTxtRf-gZiA5MHY0P3_YKf0kJIP9zwSAmpzjqnFbcgHEibglDbwL3BfPtBa05ABPb3PI53j9A");
 
     return messaging;
 }
