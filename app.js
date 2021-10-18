@@ -1,22 +1,18 @@
 function hmsMessaging() {
-    const projectId = '737518067793605225';
-    const appId = '322780611176135936';
-    const apiKey = 'CwEAAAAA+e1e0bMr1dvI6tuv89ocV9HU5s4lQ8yyyMjF/ZUCEKfzOxdV6RN0AKMLWgOp43mGBUcrZaynZsQ+7Yts25CdtCTcZcQ=';
-
-    console.log(`projectId = ${projectId}`);
-    console.log(`appId = ${appId}`);
-    console.log(`apiKey = ${apiKey}`);
-
-    // Configure web app information.
     var hmsConfig = {
-        apiKey: apiKey,
-        appId: appId,
-        projectId: projectId,
-        countryCode: "ru"
+        "apiKey":"GN0X4C3HDE53fOKw7-2QxsaO0iUcyZucOq0SBPvN",
+        "projectId":"737518067793605225",
+        "appId":"322780611176135936",
+        "countryCode":"RU"
     };
+    
+    console.log(hmsConfig);
 
-    // Initialize the WebPush SDK.
+    //Initialize Hms
     hms.initializeApp(hmsConfig);
+    
+    const messaging = hms.messaging();
+    messaging.usePublicVapidKey("BO56cwzeyARySlFTxtRf-gZiA5MHY0P3_YKf0kJIP9zwSAmpzjqnFbcgHEibglDbwL3BfPtBa05ABPb3PI53j9A");
 
-    return hms.messaging();
+    return messaging;
 }
