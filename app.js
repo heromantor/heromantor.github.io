@@ -1,6 +1,6 @@
 function hmsMessaging() {
     var hmsConfig = {
-        "apiKey":"GN0X4C3HDE53fOKw7-2QxsaO0iUcyZucOq0SBPvN",
+       "apiKey":"TMHHvt8AN578n4N-kwM3Rlxqqffx2ncM9Wq6Tmty",
         "projectId":"737518067793605225",
         "appId":"322780611176135936",
         "countryCode":"RU"
