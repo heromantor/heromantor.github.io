@@ -9,6 +9,10 @@
 const messaging = hmsMessaging()
 messaging.usePublicVapidKey("BJ_Bf4AlswEG8gc0NMnu3dwGLXoNTYB-IyYvFOEUGbGuoZsy9f2XO6h9qOV3Sh5cFe0CwezHiVCQlis1zVRWaVY");
 
+messaging.onMessage((payload) => {
+    console.log('Message received.', payload);
+});
+
 // Register a service worker.
 navigator.serviceWorker.register("sw.js", {
     //scope: "./"
